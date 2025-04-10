@@ -1,0 +1,5 @@
+data/*.pem
+data/*.txt
+log/*.txt
+config/config.php
+public/static/*.pem

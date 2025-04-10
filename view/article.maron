@@ -1,0 +1,16 @@
+{@ include(common/header) @}
+      <div class="news-article">
+        {@ if (isset($meta->thumbnail) && $meta->thumbnail != '') @}
+        <div class="thumbnail{{ isset($meta->thumborient) && $meta->thumborient != 'center' ? ' '.$meta->thumborient : '' }}">
+          <img src="/static/article/{{ $meta->thumbnail }}" alt="" />
+        </div>
+        {@ endif @}
+        <div class="meta">
+          <div class="meta-date">{{ $meta->date }}</div>
+          <div class="meta-author">{{ $meta->author }}</div>
+        </div>
+
+        <h1 class="title">{{ $meta->title }}</h1>
+        {{{ $article }}}
+      </div>
+{@ include(common/footer) @}

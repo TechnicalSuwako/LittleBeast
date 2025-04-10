@@ -1,0 +1,6 @@
+{@ include(common/header) @}
+      <h1 class="paragraph">新ページ</h1>
+      <p class="paragraph">
+        新ページだ
+      </p>
+{@ include(common/footer) @}

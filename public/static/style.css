@@ -1,0 +1,93 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #232023;
+  color: #fcfcfc;
+}
+
+a {
+  color: #ea79d8;
+}
+
+header, main, footer {
+  border: 1px solid #c016c6;
+  margin: 20px;
+  padding: 8px;
+}
+
+.logo, nav {
+  text-align: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.menu-item {
+  padding: 0 4px;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+  font-size: 140%;
+}
+
+.nodeco {
+  text-decoration: none;
+}
+
+.menu-item.active {
+  border: 1px solid #ea79d8;
+  border-radius: 10px;
+  background-color: #550f75;
+  color: #ea79d8;
+  transition: background-color 0.2s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.menu-item.active:hover {
+  background-color: #b421f8;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+h1.paragraph, p.paragraph {
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  header, main, footer {
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  .logo {
+    font-size: 28px;
+  }
+  
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header, main, footer {
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+}

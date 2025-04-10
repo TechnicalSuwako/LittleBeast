@@ -1,0 +1,24 @@
+{@ include(common/header) @}
+      <div class="news-grid">
+        {@ foreach ($posts as $post) @}
+          <article class="news-card">
+            {@ if (isset($post['thumbnail']) && $post['thumbnail'] != '') @}
+            <div class="news-image">
+              <a href="/blog/{{ $post['slug'] }}">
+                <img src="/static/article/{{ $post['thumbnail'] }}" alt="{{ $post['title'] }}" loading="lazy" />
+              </a>
+            </div>
+            {@ endif @}
+            <div class="news-content">
+              <div class="news-meta">
+                <span class="news-date">{{ $post['date'] }}</span>
+              </div>
+              <h2 class="news-title">
+                <a href="/blog/{{ $post['slug'] }}{{{ isset($_GET['q']) ? '?q='.urlencode($_GET['q']) : '' }}}">{{{ $post['title'] }}}</a>
+              </h2>
+              <p class="news-preview">{{{ $post['preview'] }}}</p>
+            </div>
+          </article>
+        {@ endforeach @}
+      </div>
+{@ include(common/footer) @}
