@@ -33,16 +33,6 @@ class Home extends Mods {
       $posts = $this->getPosts();
       if (!is_array($posts)) $posts = [];
 
-      // 検索機能が使用されている場合
-      if (isset($_GET['q']) && !empty($_GET['q'])) {
-        $this->searchKeywords = array_map('trim', explode(',', $_GET['q']));
-        $posts = $this->searchPosts($this->searchKeywords, $posts);
-        $pagetit = '検索結果: ' . htmlspecialchars($_GET['q']);
-
-        // 検索結果にキーワードをハイライト
-        $posts = $this->highlightKeywords($posts);
-      }
-
       // ページネーション
       $totalPosts = count($posts);
       $totalPages = ceil($totalPosts / $postsPerPage);
@@ -90,8 +80,6 @@ class Home extends Mods {
       // 検索からの遷移の場合、記事内のキーワードをハイライト
       if (isset($_GET['q']) && !empty($_GET['q'])) {
         $keywords = array_map('trim', explode(',', $_GET['q']));
-        $article = $this->highlightTextContent($article, $keywords);
-        $meta->title = $this->highlightTextContent($meta->title, $keywords);
       }
 
       $tmpl->assign('pagetit', $pagetit);
@@ -108,7 +96,6 @@ class Home extends Mods {
         }
       }
 
-      $tmpl->addCss('news-article');
       $tmpl->render('article');
     } catch (\Exception $e) {
       throw new \Exception($e->getMessage());
