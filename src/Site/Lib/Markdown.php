@@ -284,6 +284,9 @@ class Markdown {
     // リンク
     $text = preg_replace('/\[(.+?)\]\((.+?)\)/', '<a href="$2">$1</a>', $text);
 
+    // 振り仮名
+    $text = preg_replace('/\<(.+?)\>\((.+?)\)/', '<ruby>$1<rp>(</rp><rt>$2</rt><rp>)</rp></ruby>', $text);
+
     // インラインコード
     $text = preg_replace('/`(.+?)`/', '<code>$1</code>', $text);
 
