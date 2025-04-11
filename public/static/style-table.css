@@ -1,0 +1,22 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #c016c6;
+  background-color: #232023;
+  margin: auto;
+  width: 95%;
+  max-width: 1100px;
+  overflow: hidden;
+}
+
+th, td {
+  border-bottom: 1px solid #ea79d8;
+  text-align: left;
+  padding: 10px;
+  vertical-align: top;
+}
+
+th {
+  background-color: #550f75;
+  width: 300px;
+}

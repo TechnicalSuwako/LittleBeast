@@ -102,6 +102,13 @@ class Home extends Mods {
       $tmpl->assign('meta', $meta);
       $tmpl->assign('description', $description);
 
+      if (isset($meta->css) && !empty($meta->css)) {
+        foreach ($meta->css as $v) {
+          $tmpl->addCss($v);
+        }
+      }
+
+      $tmpl->addCss('news-article');
       $tmpl->render('article');
     } catch (\Exception $e) {
       throw new \Exception($e->getMessage());

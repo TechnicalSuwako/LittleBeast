@@ -45,7 +45,7 @@ class Markdown {
       $value = trim(substr($line, $colonPos + 1));
       $value = trim($value, '"\'');
 
-      if ($key == 'category') {
+      if ($key == 'category' || $key == 'css') {
         $cat = explode(',', $value);
         $value = $cat;
       }
